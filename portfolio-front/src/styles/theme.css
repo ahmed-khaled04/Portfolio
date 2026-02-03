@@ -1,0 +1,30 @@
+:root {
+  /* Layout */
+  --container: 1100px;
+
+  /* Colors */
+  --bg: #0b0c10;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-2: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.12);
+
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.68);
+
+  /* Accent */
+  --accent: #7c5cff;
+
+  /* Effects */
+  --radius: 16px;
+  --radius-sm: 12px;
+
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  /* Spacing */
+  --s-1: 8px;
+  --s-2: 12px;
+  --s-3: 16px;
+  --s-4: 24px;
+  --s-5: 32px;
+  --s-6: 48px;
+}

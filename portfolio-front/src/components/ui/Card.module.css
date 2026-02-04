@@ -1,0 +1,7 @@
+.card {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--surface), rgba(255, 255, 255, 0.02));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--s-5);
+}

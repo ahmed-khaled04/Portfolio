@@ -13,6 +13,14 @@ export default function Navbar() {
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/contact">Contact</NavLink>
+          <a
+            href="/CV.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.resumeBtn}
+          >
+            Resume
+          </a>
         </div>
       </nav>
     </header>

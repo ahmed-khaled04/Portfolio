@@ -1,0 +1,178 @@
+.grid {
+  display: grid;
+  gap: var(--s-5);
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1.25fr 0.9fr;
+    align-items: start;
+  }
+}
+
+/* Left card */
+.card {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--surface), rgba(255, 255, 255, 0.02));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--s-6);
+}
+
+.kicker {
+  margin: 0 0 var(--s-2) 0;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.big {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  word-break: break-word;
+}
+
+.actions {
+  margin-top: var(--s-5);
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.copyBtn {
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 12px;
+
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: background 140ms ease, border-color 140ms ease, transform 120ms ease;
+}
+
+.copyBtn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.copyBtn:active {
+  transform: translateY(1px);
+}
+
+.copyBtn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.18);
+  border-color: rgba(124, 92, 255, 0.45);
+}
+
+.smallMuted {
+  margin: var(--s-4) 0 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Inline availability inside email card */
+.inlineAvailability {
+  margin-top: var(--s-5);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--border);
+}
+
+.availabilityTitle {
+  margin: 6px 0 0 0;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.availabilityDesc {
+  margin: 10px 0 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.availabilityStatus {
+  margin-top: var(--s-4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.18);
+}
+
+/* Social column */
+.socialCol {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.socialCard {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.03);
+  padding: var(--s-5);
+  transition: transform 180ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.socialCard:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(124, 92, 255, 0.35);
+}
+
+.socialTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.socialName {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.arrow {
+  color: var(--muted);
+}
+
+.socialNote {
+  margin: 10px 0 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Tip box */
+.tip {
+  border: 1px solid rgba(124, 92, 255, 0.35);
+  background: rgba(124, 92, 255, 0.08);
+  border-radius: var(--radius);
+  padding: var(--s-5);
+}
+
+.tipTitle {
+  margin: 0;
+  font-weight: 650;
+}
+
+.tipText {
+  margin: 10px 0 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}

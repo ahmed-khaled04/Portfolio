@@ -44,3 +44,29 @@
   background: var(--surface-2);
   color: var(--text);
 }
+
+.resumeBtn {
+  margin-left: 12px;
+
+  padding: 8px 14px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(124, 92, 255, 0.45);
+  background: rgba(124, 92, 255, 0.12);
+
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+
+  transition: background 140ms ease, border-color 140ms ease, transform 120ms ease;
+}
+
+.resumeBtn:hover {
+  background: rgba(124, 92, 255, 0.22);
+  border-color: rgba(124, 92, 255, 0.65);
+}
+
+.resumeBtn:active {
+  transform: translateY(1px);
+}

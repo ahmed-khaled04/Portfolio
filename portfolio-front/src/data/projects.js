@@ -43,6 +43,13 @@ export const projects = [
       report: "",
       docs: "",
     },
+    media: {
+        hero: "/projects/sync-clash/hero.png",
+        caption: "Multiplayer grid snapshot — real-time UDP state synchronization.",
+        gallery: [
+            "/projects/sync-clash/1.png",
+        ],
+    },
   },
 
   {

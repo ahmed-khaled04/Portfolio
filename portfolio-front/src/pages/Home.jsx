@@ -60,7 +60,7 @@ export default function Home() {
           <aside className={styles.rightCard}>
             <div className={styles.identity}>
               <img
-                src="/me.jpg"
+                src="/me.jpeg"
                 alt="Ahmed Khaled"
                 className={styles.avatar}
               />

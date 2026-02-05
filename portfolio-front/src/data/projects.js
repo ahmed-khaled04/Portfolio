@@ -96,6 +96,15 @@ export const projects = [
       report: "",
       docs: "",
     },
+    media: {
+        hero: "/projects/door-lock-security/hero.jpg",
+        caption: "Dual-ECU embedded door-lock system with secure password authentication and motor control (Tiva-C)..",
+        gallery: [
+            "/projects/door-lock-security/1.png",
+            "/projects/door-lock-security/2.png",
+            "/projects/door-lock-security/3.png",
+        ],
+    },
   },
 
   {
@@ -137,6 +146,15 @@ export const projects = [
       demo: "",
       report: "",
       docs: "",
+    },
+    media: {
+        hero: "/projects/compiler/hero.jpg",
+        caption: "C++ compiler front-end implementing lexical analysis and parsing for a Python-like language.",
+        gallery: [
+            "/projects/compiler/1.png",
+            "/projects/compiler/3.png",
+            "/projects/compiler/4.png",
+        ],
     },
   },
 

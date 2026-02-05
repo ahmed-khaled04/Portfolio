@@ -12,13 +12,15 @@ import NotFound from "../pages/NotFound";
 export const router = createBrowserRouter([
   {
     element: <Layout />,
+    errorElement: <NotFound />,
     children: [
       { path: "/", element: <Home /> },
       { path: "/projects", element: <Projects /> },
       { path: "/projects/:slug", element: <ProjectDetails /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
+
+      { path: "*", element: <NotFound /> },
     ],
   },
-  { path: "*", element: <NotFound /> },
 ]);

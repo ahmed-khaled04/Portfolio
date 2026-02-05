@@ -1,10 +1,24 @@
 .section {
   padding: var(--s-6) 0;
+  animation: fadeIn 0.8s ease-out;
+  position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.3;
 }
 
 .header {
   margin-bottom: var(--s-4);
   max-width: 720px;
+  animation: fadeInUp 0.8s ease-out 0.15s both;
 }
 
 .eyebrow {

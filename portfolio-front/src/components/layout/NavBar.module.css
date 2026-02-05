@@ -5,6 +5,13 @@
   background: rgba(11, 12, 16, 0.75);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
+  animation: slideInDown 0.6s ease-out;
+  box-shadow: 0 0 30px rgba(124, 92, 255, 0);
+  transition: box-shadow 300ms ease;
+}
+
+.header:hover {
+  box-shadow: 0 0 30px rgba(124, 92, 255, 0.1);
 }
 
 .nav {
@@ -20,6 +27,7 @@
 .logo {
   font-weight: 650;
   letter-spacing: 0.2px;
+  animation: fadeIn 0.8s ease-out 0.1s both;
 }
 
 .links {
@@ -32,17 +40,40 @@
   color: var(--muted);
   padding: 8px 10px;
   border-radius: 10px;
-  transition: background 150ms ease, color 150ms ease;
+  transition: background 150ms ease, color 150ms ease, transform 150ms ease;
+  animation: fadeIn 0.8s ease-out 0.2s both;
+  will-change: transform;
+  position: relative;
+}
+
+.links a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .links a:hover {
   background: var(--surface);
   color: var(--text);
+  transform: translateY(-2px);
+}
+
+.links a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .links a.active {
   background: var(--surface-2);
   color: var(--text);
+  box-shadow: 0 0 0 2px rgba(124, 92, 255, 0.25);
 }
 
 .resumeBtn {

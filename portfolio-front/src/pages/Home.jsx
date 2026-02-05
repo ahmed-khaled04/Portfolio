@@ -20,11 +20,11 @@ export default function Home() {
             <p className={styles.eyebrow}>Computer Engineering • Full-Stack • AI/Data</p>
 
             <h1 className={styles.headline}>
-              Building clean, modern software that actually ships.
+              Engineering systems from embedded hardware to production web.
             </h1>
 
             <p className={styles.subhead}>
-              Full-stack + engineering projects with strong architecture, smooth UX, and real results.
+              Computer Engineering student building full-stack applications, embedded systems, and compilers. Strong systems thinking with projects spanning networking, security, and modern web development.
             </p>
 
             <div className={styles.actions}>
@@ -77,7 +77,6 @@ export default function Home() {
               <span className={styles.pill}>Full-Stack</span>
               <span className={styles.pill}>AI / Data</span>
               <span className={styles.pill}>Embedded</span>
-              <span className={styles.pill}>Networking</span>
             </div>
 
             <div className={styles.stats}>
@@ -140,8 +139,8 @@ export default function Home() {
 
       <Section
         eyebrow="Expertise"
-        title="Skills & technical focus"
-        description="A practical skill set built through academic depth and hands-on engineering projects."
+        title="Technical Foundations"
+        description="Systems thinking: embedded C/C++, data structures, networking protocols, and full-stack web development. Academic depth with hands-on project execution."
       >
         <div className={skillsStyles.grid}>
           {skillGroups.map((g) => (

@@ -5,7 +5,7 @@ import styles from "./About.module.css";
 export default function About() {
   return (
     <>
-      <Section eyebrow="About" title="Ahmed Khaled" description="Undergraduate Computer Engineering (Data Science track) — Ain Shams University.">
+      <Section eyebrow="About" title="Ahmed Khaled" description="Computer Engineering student (Data Science track) at Ain Shams University with systems engineering focus.">
         <div className={styles.heroGrid}>
           <div className={styles.left}>
             <p className={styles.bio}>
@@ -73,7 +73,7 @@ export default function About() {
       <Section
         eyebrow="Background"
         title="Education"
-        description="Academic foundation in computer engineering with a data science focus."
+        description="Computer Engineering foundation with data science specialization and distributed systems focus."
       >
         <div className={styles.twoCol}>
           <div className={styles.block}>
@@ -114,13 +114,11 @@ export default function About() {
       <Section
         eyebrow="Now"
         title="What I’m looking for"
-        description="I’m interested in opportunities where I can build real systems and grow fast."
+        description="Opportunities to ship real systems and solve complex engineering problems at scale."
       >
         <div className={styles.callout}>
           <p className={styles.calloutText}>
-            I’m open to internships and project-based work in <strong>software engineering</strong>,
-            <strong> full-stack development</strong>, <strong>embedded systems</strong>, and <strong>AI/data</strong>.
-            If you have a role that needs strong engineering fundamentals and fast execution, let’s talk.
+            Open to internships and roles in <strong>systems engineering</strong>, <strong>full-stack development</strong>, <strong>embedded systems</strong>, and <strong>backend infrastructure</strong>. I'm looking for opportunities where I can architect solutions, optimize performance, and work on technically complex problems. Strong fundamentals, fast execution, attention to detail.
           </p>
 
           <div className={styles.actions}>

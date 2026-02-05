@@ -1,9 +1,13 @@
 import Section from "../components/ui/Section";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
+import SkillCard from "../components/ui/SkillCard";
 import styles from "./Home.module.css";
 import featuredStyles from "./HomeFeatured.module.css";
+import skillsStyles from "./HomeSkills.module.css";
 
+
+import { skillGroups } from "../data/skills";
 import { projects } from "../data/projects";
 
 
@@ -91,6 +95,20 @@ export default function Home() {
           ))}
         </div>
       </Section>
+      
+      <Section
+        eyebrow="Expertise"
+        title="Skills & technical focus"
+        description="A practical skill set built through academic depth and hands-on engineering projects."
+      >
+
+        <div className={skillsStyles.grid}>
+          {skillGroups.map((g) => (
+            <SkillCard key={g.title} title={g.title} items={g.items} />
+          ))}
+        </div>
+      </Section>
+
     </>
   );
 }

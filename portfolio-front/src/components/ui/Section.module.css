@@ -1,7 +1,13 @@
 .section {
-  padding: var(--s-6) 0;
+  padding: var(--s-5) 0;
   animation: fadeIn 0.8s ease-out;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--s-6) 0;
+  }
 }
 
 .section::before {
@@ -24,23 +30,36 @@
 .eyebrow {
   margin: 0 0 var(--s-2) 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .title {
   margin: 0 0 var(--s-2) 0;
-  font-size: 32px;
-  line-height: 1.15;
+  font-size: 24px;
+  line-height: 1.2;
   letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 32px;
+    line-height: 1.15;
+  }
 }
 
 .description {
   margin: 0;
   color: var(--muted);
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .description {
+    font-size: 16px;
+  }
 }
 
 .body {

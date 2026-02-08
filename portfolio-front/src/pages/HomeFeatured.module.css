@@ -11,8 +11,14 @@
 }
 
 .card {
-  padding: var(--s-5);
+  padding: var(--s-4);
   animation: fadeInUp 0.7s ease-out both;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: var(--s-5);
+  }
 }
 
 .thumb {

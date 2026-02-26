@@ -61,7 +61,7 @@ export const projects = [
     tags: ["Embedded", "Tiva-C", "Security"],
     stack: ["C", "TM4C123", "UART", "EEPROM", "Timers"],
 
-    featured: true,
+    featured: false,
 
     problem:
       "Designing a reliable embedded security system with secure password handling and fault tolerance.",
@@ -344,6 +344,78 @@ export const projects = [
       github: "https://github.com/ucouldcallmeEL/RedditClone",
       demo: "",
       report: "https://github.com/ucouldcallmeEL/RedditClone/blob/main/API_DOCUMENTATION.md",
+    },
+  },
+  {
+    title: "Syncro – Real-Time Collaborative Code Editor",
+    slug: "syncro-collab-editor",
+    summary:
+      "A full-stack real-time collaborative code editor with Yjs CRDT synchronization, per-file version history, role-based access control, and persistent PostgreSQL snapshots.",
+
+    tags: ["Real-Time", "CRDT", "Collaboration", "Full-Stack"],
+    stack: [
+      "React",
+      "Node.js",
+      "Express",
+      "Socket.IO",
+      "Yjs",
+      "PostgreSQL",
+      "Tailwind CSS",
+    ],
+
+    featured: true,
+
+    problem:
+      "Traditional collaborative systems struggle with concurrency, versioning, and real-time synchronization. The challenge was building a scalable, low-latency editor that supports concurrent editing, file management, locking, and persistent history.",
+
+    solution: [
+      "Implemented CRDT-based synchronization using Yjs",
+      "Built WebSocket layer using Socket.IO for real-time updates",
+      "Designed a per-file snapshot/versioning system stored in PostgreSQL",
+      "Added role-based locking and edit permission controls",
+      "Implemented full virtual file system using Yjs shared maps",
+    ],
+
+    architecture: [
+      "React frontend with modular hooks (useYjsSync, useRoomLanguage)",
+      "Socket.IO real-time communication layer",
+      "Yjs CRDT document model",
+      "PostgreSQL snapshot + version persistence layer",
+      "Room-based permission & locking system",
+    ],
+
+    contributions: [
+      "Designed full client–server architecture",
+      "Implemented Yjs synchronization layer",
+      "Built file explorer with nested folder structure",
+      "Implemented snapshot history & restore system",
+      "Developed role-based access control (owner/editor/viewer)",
+    ],
+
+    highlights: [
+      "Real-time multi-user editing",
+      "Per-file version history with restore capability",
+      "Room locking + edit request system",
+      "Persistent auto-snapshots with debouncing",
+      "Export entire project as ZIP",
+    ],
+
+    links: {
+      github: "https://github.com/ahmed-khaled04/syncro",
+      demo: "", 
+      report: "",
+      docs: "",
+    },
+
+    media: {
+      hero: "/projects/syncro/hero.png",
+      caption:
+        "Syncro collaborative editor — CRDT-based real-time editing with snapshot history and role-based access control.",
+      gallery: [
+        "/projects/syncro/1.png",
+        "/projects/syncro/2.png",
+        "/projects/syncro/3.png",
+      ],
     },
   },
 ];

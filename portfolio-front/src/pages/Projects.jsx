@@ -1,134 +1,136 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import FadeUp from '../components/ui/FadeUp';
+import { projects } from '../data/projects';
+import styles from './Projects.module.css';
 
-import Section from "../components/ui/Section";
-import Card from "../components/ui/Card";
-import Button from "../components/ui/Button";
+const CATEGORIES = [
+  { key: 'all',      label: 'Everything', icon: '∞' },
+  { key: 'Embedded', label: 'Embedded',   icon: '⚡' },
+  { key: 'Web',      label: 'Web',        icon: '⬡' },
+  { key: 'ML',       label: 'ML · Data',  icon: '◈' },
+  { key: 'Systems',  label: 'Systems',    icon: '◪' },
+];
 
-import { projects } from "../data/projects";
-import styles from "./Projects.module.css";
+const PROJECT_CATS = {
+  'sync-clash':                  ['Systems'],
+  'door-lock-tivac':             ['Embedded'],
+  'python-compiler-lexer-parser':['Systems'],
+  'banking-system':              ['Web'],
+  'verilog-lint-checker':        ['Systems'],
+  'ums-agile-scrum':             ['Web'],
+  'reddit-clone':                ['Web'],
+  'syncro-collab-editor':        ['Web'],
+};
+
+function getIcon(tags) {
+  if (tags.includes('Networking') || tags.includes('UDP')) return '⚡';
+  if (tags.includes('Compilers') || tags.includes('Parsing')) return '◈';
+  if (tags.includes('Embedded')) return '⊕';
+  if (tags.includes('Full-Stack') || tags.includes('API')) return '⬡';
+  return '⬡';
+}
 
 export default function Projects() {
-  const [query, setQuery] = useState("");
-  const [activeTag, setActiveTag] = useState("All");
-
-  const tags = useMemo(() => {
-    const allTags = new Set();
-    projects.forEach((p) => p.tags.forEach((t) => allTags.add(t)));
-    return ["All", ...Array.from(allTags).sort()];
-  }, []);
+  const [cat, setCat] = useState('all');
+  const navigate = useNavigate();
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-
-    const list = projects.filter((p) => {
-      const matchesTag = activeTag === "All" || p.tags.includes(activeTag);
-
-      const haystack = [p.title, p.summary, ...(p.tags || []), ...(p.stack || [])]
-        .join(" ")
-        .toLowerCase();
-
-      const matchesQuery = q.length === 0 || haystack.includes(q);
-
-      return matchesTag && matchesQuery;
-    });
-
+    const list = projects.filter(p =>
+      cat === 'all' || (PROJECT_CATS[p.slug] || []).includes(cat)
+    );
     return list.sort((a, b) => {
-      const fa = a.featured ? 1 : 0;
-      const fb = b.featured ? 1 : 0;
-      if (fb !== fa) return fb - fa;
-      return a.title.localeCompare(b.title);
+      if (a.featured && !b.featured) return -1;
+      if (!a.featured && b.featured) return 1;
+      return 0;
     });
-  }, [query, activeTag]);
+  }, [cat]);
 
   return (
-    <Section
-      eyebrow="Projects"
-      title="All Projects"
-      description="Search and filter by category to quickly find what you’re looking for."
-    >
-      <div className={styles.toolbar}>
-        <div className={styles.searchWrap}>
-          <input
-            className={styles.search}
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search projects (e.g., UDP, Tiva-C, compiler)..."
-            aria-label="Search projects"
-          />
+    <div className={styles.page}>
+      {/* Header */}
+      <div className={styles.header}>
+        <div className={styles.headerInner}>
+          <div>
+            <p className={styles.eyebrow}>Work</p>
+            <h1 className={styles.title}>Projects</h1>
+          </div>
+          <span className={styles.ghostCount} aria-hidden="true">
+            {String(filtered.length).padStart(2, '0')}
+          </span>
         </div>
+      </div>
 
-        <div className={styles.chips} role="tablist" aria-label="Project filters">
-          {tags.map((t) => (
+      {/* Category filter */}
+      <div className={styles.filterBar}>
+        <div className={styles.filterInner}>
+          {CATEGORIES.map(c => (
             <button
-              key={t}
+              key={c.key}
               type="button"
-              className={`${styles.chip} ${activeTag === t ? styles.active : ""}`}
-              onClick={() => setActiveTag(t)}
-              role="tab"
-              aria-selected={activeTag === t}
+              className={`${styles.filterTab} ${cat === c.key ? styles.filterActive : ''}`}
+              onClick={() => setCat(c.key)}
             >
-              {t}
+              <span className={styles.filterIcon} aria-hidden="true">{c.icon}</span>
+              {c.label}
+              {cat === c.key && (
+                <span className={styles.filterCount}>{filtered.length}</span>
+              )}
             </button>
           ))}
         </div>
       </div>
 
-      <div className={styles.meta}>
-        <span className={styles.count}>
-          Showing <strong>{filtered.length}</strong> of{" "}
-          <strong>{projects.length}</strong>
-        </span>
+      {/* Grid */}
+      <div className={styles.gridWrap}>
+        <div className={styles.grid}>
+          {filtered.map((p, i) => {
+            const isWide = i === 0;
+            return (
+              <FadeUp key={p.slug} delay={i * 60}>
+                <button
+                  type="button"
+                  className={`${styles.card} ${isWide ? styles.cardWide : ''}`}
+                  onClick={() => navigate(`/projects/${p.slug}`)}
+                  aria-label={`Open ${p.title}`}
+                >
+                  {/* Visual */}
+                  <div className={styles.visual}>
+                    <div className={styles.visualBg} />
+                    <span className={styles.visualIcon} aria-hidden="true">
+                      {getIcon(p.tags)}
+                    </span>
+                    <span className={styles.cardNum} aria-hidden="true">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div className={styles.visualOverlay} />
+                  </div>
 
-        {(query || activeTag !== "All") && (
-          <button
-            className={styles.clear}
-            type="button"
-            onClick={() => {
-              setQuery("");
-              setActiveTag("All");
-            }}
-          >
-            Clear
-          </button>
+                  {/* Content */}
+                  <div className={styles.cardContent}>
+                    <div className={styles.titleRow}>
+                      <h3 className={styles.cardTitle}>{p.title}</h3>
+                      <span className={styles.cardOpen}>Open →</span>
+                    </div>
+                    {isWide && <p className={styles.cardSummary}>{p.summary}</p>}
+                    <div className={styles.tagRow}>
+                      {p.tags.slice(0, isWide ? 5 : 3).map(t => (
+                        <span key={t} className={styles.tag}>{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                </button>
+              </FadeUp>
+            );
+          })}
+        </div>
+
+        {filtered.length === 0 && (
+          <div className={styles.empty}>
+            <p className={styles.emptyTitle}>No projects in this category yet.</p>
+          </div>
         )}
       </div>
-
-      <div className={styles.grid}>
-        {filtered.map((p) => (
-          <Card
-            key={p.slug}
-            className={`${styles.card} ${p.featured ? styles.featured : ""}`.trim()}
-          >
-            <div className={styles.cardTop}>
-              <h3 className={styles.title}>{p.title}</h3>
-              <Button to={`/projects/${p.slug}`} variant="subtle" size="sm">
-                Details
-              </Button>
-            </div>
-            
-            {p.featured && <div className={styles.featuredBadge}>Featured</div>}
-
-            <p className={styles.summary}>{p.summary}</p>
-
-            <div className={styles.tags}>
-              {p.tags.map((tag) => (
-                <span key={tag} className={styles.tag}>
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </Card>
-        ))}
-      </div>
-
-      {filtered.length === 0 && (
-        <div className={styles.empty}>
-          <p className={styles.emptyTitle}>No matching projects.</p>
-          <p className={styles.emptyText}>
-            Try a different keyword or clear filters.
-          </p>
-        </div>
-      )}
-    </Section>
+    </div>
   );
 }

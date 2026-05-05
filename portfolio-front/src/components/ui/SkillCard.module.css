@@ -1,86 +1,61 @@
 .card {
-  position: relative;
+  padding: 1.25rem 1.5rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
   border: 1px solid var(--border);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.06),
-    rgba(255, 255, 255, 0.015)
-  );
-  border-radius: var(--radius);
-  padding: var(--s-5);
-  box-shadow: var(--shadow);
-  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 300ms ease, border-color 300ms ease;
-  animation: fadeInUp 0.7s ease-out;
-  will-change: transform, border-color, box-shadow;
-  overflow: hidden;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(124, 92, 255, 0.1) 0%, transparent 70%);
-  animation: rotateSlow 6s linear infinite;
-  pointer-events: none;
-}
-
-.card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(124, 92, 255, 0.15), transparent);
-  animation: shimmerWave 3s infinite;
-  pointer-events: none;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.02);
-  border-color: rgba(124, 92, 255, 0.4);
-  box-shadow: 0 20px 45px rgba(124, 92, 255, 0.15), 0 0 0 1px rgba(124, 92, 255, 0.1);
+  transform: translateY(-2px);
+  background: var(--surface-hover);
+  border-color: var(--border-accent);
 }
 
 .header {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: var(--s-4);
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 1rem;
 }
 
 .title {
   margin: 0;
-  font-size: 18px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
   letter-spacing: -0.01em;
+  color: var(--text);
 }
 
 .highlight {
-  font-size: 12px;
+  font-size: 0.65rem;
+  font-weight: 600;
   color: var(--accent);
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  opacity: 0.7;
+  white-space: nowrap;
 }
 
 .items {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 6px;
 }
 
 .pill {
+  padding: 0.22rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 999px;
-  padding: 8px 12px;
+  font-size: 0.78rem;
   color: var(--muted);
-  font-size: 13px;
-  transition: background 120ms ease, color 120ms ease;
+  transition: color 0.15s ease, background 0.15s ease;
 }
 
 .card:hover .pill {
   color: var(--text);
+  background: rgba(92, 154, 255, 0.05);
 }

@@ -21,6 +21,8 @@ const PROJECT_CATS = {
   'ums-agile-scrum':             ['Web'],
   'reddit-clone':                ['Web'],
   'syncro-collab-editor':        ['Web'],
+  'kora-live':                   ['Web'],
+  'traffic-sign-detection':      ['ML'],
 };
 
 function getIcon(tags) {
@@ -97,9 +99,10 @@ export default function Projects() {
                   {/* Visual */}
                   <div className={styles.visual}>
                     <div className={styles.visualBg} />
-                    <span className={styles.visualIcon} aria-hidden="true">
-                      {getIcon(p.tags)}
-                    </span>
+                    {p.media?.hero
+                      ? <img src={p.media.hero} alt={p.title} className={styles.visualImg} loading="lazy" />
+                      : <span className={styles.visualIcon} aria-hidden="true">{getIcon(p.tags)}</span>
+                    }
                     <span className={styles.cardNum} aria-hidden="true">
                       {String(i + 1).padStart(2, '0')}
                     </span>

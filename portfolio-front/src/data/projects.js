@@ -44,11 +44,10 @@ export const projects = [
       docs: "",
     },
     media: {
-        hero: "/projects/sync-clash/hero.png",
-        caption: "Multiplayer grid snapshot — real-time UDP state synchronization.",
-        gallery: [
-            "/projects/sync-clash/1.png",
-        ],
+      hero: "/projects/sync-clash/hero.png",
+      caption:
+        "Multiplayer grid snapshot — real-time UDP state synchronization.",
+      gallery: ["/projects/sync-clash/1.png"],
     },
   },
 
@@ -97,13 +96,14 @@ export const projects = [
       docs: "",
     },
     media: {
-        hero: "/projects/door-lock-security/hero.jpg",
-        caption: "Dual-ECU embedded door-lock system with secure password authentication and motor control (Tiva-C)..",
-        gallery: [
-            "/projects/door-lock-security/1.png",
-            "/projects/door-lock-security/2.png",
-            "/projects/door-lock-security/3.png",
-        ],
+      hero: "/projects/door-lock-security/hero.jpg",
+      caption:
+        "Dual-ECU embedded door-lock system with secure password authentication and motor control (Tiva-C)..",
+      gallery: [
+        "/projects/door-lock-security/1.png",
+        "/projects/door-lock-security/2.png",
+        "/projects/door-lock-security/3.png",
+      ],
     },
   },
 
@@ -148,13 +148,14 @@ export const projects = [
       docs: "",
     },
     media: {
-        hero: "/projects/compiler/hero.jpg",
-        caption: "C++ compiler front-end implementing lexical analysis and parsing for a Python-like language.",
-        gallery: [
-            "/projects/compiler/1.png",
-            "/projects/compiler/3.png",
-            "/projects/compiler/4.png",
-        ],
+      hero: "/projects/compiler/hero.jpg",
+      caption:
+        "C++ compiler front-end implementing lexical analysis and parsing for a Python-like language.",
+      gallery: [
+        "/projects/compiler/1.png",
+        "/projects/compiler/3.png",
+        "/projects/compiler/4.png",
+      ],
     },
   },
 
@@ -204,6 +205,11 @@ export const projects = [
       report: "",
       docs: "",
     },
+    media: {
+      hero: "/projects/bank/hero.png",
+      caption: "",
+      gallery: [],
+    },
   },
 
   // ===== Normalized: Verilog Lint Checker =====
@@ -251,6 +257,11 @@ export const projects = [
       report: "",
       docs: "https://github.com/ahmed-khaled04/Verilog_Lint_Checker/blob/main/LOLINTA%20REPORT.pdf",
     },
+    media: {
+      hero: "/projects/verilog/hero.png",
+      caption: "",
+      gallery: [],
+    },
   },
 
   // ===== Normalized: UMS =====
@@ -294,10 +305,16 @@ export const projects = [
     ],
 
     links: {
-      github: "https://github.com/Saifeldinsais/Agile---University-Management-System",
+      github:
+        "https://github.com/Saifeldinsais/Agile---University-Management-System",
       demo: "",
       report: "",
       docs: "",
+    },
+    media: {
+      hero: "/projects/ums/hero.png",
+      caption: "",
+      gallery: [],
     },
   },
 
@@ -343,7 +360,13 @@ export const projects = [
     links: {
       github: "https://github.com/ucouldcallmeEL/RedditClone",
       demo: "",
-      report: "https://github.com/ucouldcallmeEL/RedditClone/blob/main/API_DOCUMENTATION.md",
+      report:
+        "https://github.com/ucouldcallmeEL/RedditClone/blob/main/API_DOCUMENTATION.md",
+    },
+    media: {
+      hero: "/projects/reddit/hero.png",
+      caption: "",
+      gallery: [],
     },
   },
   {
@@ -402,7 +425,7 @@ export const projects = [
 
     links: {
       github: "https://github.com/ahmed-khaled04/syncro",
-      demo: "", 
+      demo: "",
       report: "",
       docs: "",
     },
@@ -415,6 +438,155 @@ export const projects = [
         "/projects/syncro/1.png",
         "/projects/syncro/2.png",
         "/projects/syncro/3.png",
+      ],
+    },
+  },
+
+  {
+    title: "Kora – Live Football Social Platform",
+    slug: "kora-live",
+    summary:
+      "A real-time sports social platform where users follow live matches, react with emoji, predict scorelines, and compete on a global leaderboard.",
+
+    tags: ["Real-Time", "Full-Stack", "Social", "WebSockets"],
+    stack: [
+      "React 19",
+      "Vite",
+      "Tailwind CSS v4",
+      "Node.js",
+      "Express 5",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "BullMQ",
+      "Socket.IO",
+      "TanStack Query",
+      "Cloudinary",
+      "Resend",
+    ],
+
+    featured: true,
+
+    problem:
+      "Sports apps are passive — users scroll scores but can't engage with the moment. The challenge was building a live social layer on top of real football data with low-latency reactions and a fair prediction scoring system.",
+
+    solution: [
+      "Integrated API-Football to poll live, upcoming, and finished match data",
+      "Built WebSocket broadcast layer for real-time comments and emoji reactions",
+      "Implemented a prediction engine — exact score earns 5 pts, correct outcome earns 2 pts",
+      "Auto-scores predictions when a match finishes using BullMQ background jobs",
+      "Designed a global leaderboard ranked by total prediction points",
+    ],
+
+    architecture: [
+      "React 19 + TanStack Query frontend with Tailwind CSS v4",
+      "Express 5 REST API + Socket.IO real-time layer",
+      "PostgreSQL via Prisma ORM for persistence",
+      "Redis + BullMQ for caching and background job queues",
+      "Cloudinary for avatar storage, Resend for email notifications",
+    ],
+
+    contributions: [
+      "Designed full client–server architecture",
+      "Built match polling service and live data pipeline",
+      "Implemented prediction scoring and leaderboard system",
+      "Developed real-time social features (reactions, comments, notifications)",
+      "Integrated third-party services (Cloudinary, Resend, API-Football)",
+    ],
+
+    highlights: [
+      "Live match reactions and comments via WebSockets",
+      "Score prediction system with automatic point scoring",
+      "Follow system with in-app and email notifications",
+      "Global leaderboard with real-time updates",
+      "Background job queue for match state polling",
+    ],
+
+    links: {
+      github: "https://github.com/ahmed-khaled04/kora-live",
+      demo: "",
+      report: "",
+      docs: "",
+    },
+
+    media: {
+      hero: "/projects/kora/hero.png",
+      caption: "Kora — live match feed with real-time reactions and score predictions.",
+      gallery: [
+        "/projects/kora/1.png",
+        "/projects/kora/2.png",
+        "/projects/kora/3.png",
+        "/projects/kora/4.png",
+      ],
+    },
+  },
+
+  {
+    title: "Traffic Sign Recognition",
+    slug: "traffic-sign-detection",
+    summary:
+      "Classical computer vision pipeline for traffic sign classification using HOG feature extraction and an SVM classifier — 90.2% accuracy across 43 classes on the GTSRB dataset.",
+
+    tags: ["ML/Data", "Computer Vision", "Python"],
+    stack: [
+      "Python",
+      "scikit-learn",
+      "OpenCV",
+      "HOG",
+      "SVM",
+      "Streamlit",
+      "NumPy",
+    ],
+
+    featured: false,
+
+    problem:
+      "Traffic sign classification without deep learning — achieving high accuracy using only classical CV techniques on a 43-class imbalanced dataset.",
+
+    solution: [
+      "Cropped and resized ROI regions, normalized to [0,1], converted BGR→HSV",
+      "Applied HSV color masking to segment red, blue, and yellow signs",
+      "Extracted HOG features (9 orientations, 8×8 cells, 2×2 blocks, L2-Hys norm)",
+      "Trained an RBF-kernel SVM (C=10, γ=0.001) on scaled features",
+      "Built an interactive Streamlit demo for single-image inference",
+    ],
+
+    architecture: [
+      "Preprocessing pipeline (crop, resize, normalize, HSV conversion)",
+      "Segmentation module (HSV color masking)",
+      "HOG feature extraction",
+      "StandardScaler + SVM classifier",
+      "Streamlit demo app",
+    ],
+
+    contributions: [
+      "Designed the full preprocessing and feature extraction pipeline",
+      "Tuned SVM hyperparameters to reach 90.2% test accuracy",
+      "Built the Streamlit demo for interactive inference",
+      "Produced confusion matrix and metrics artifacts",
+    ],
+
+    highlights: [
+      "90.2% test accuracy across 43 sign classes",
+      "No deep learning — pure classical CV pipeline",
+      "Interactive Streamlit demo app",
+      "Full confusion matrix and metrics exported to results/",
+    ],
+
+    links: {
+      github: "https://github.com/ahmed-khaled04/traffic-sign-detection",
+      demo: "",
+      report: "",
+      docs: "",
+    },
+
+    media: {
+      hero: "/projects/traffic/hero.png",
+      caption: "",
+      gallery: [
+        "/projects/traffic/1.png",
+        "/projects/traffic/2.png",
+        "/projects/traffic/3.png",
       ],
     },
   },

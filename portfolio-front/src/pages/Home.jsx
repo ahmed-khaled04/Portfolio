@@ -177,9 +177,11 @@ export default function Home() {
               aria-label={`Open ${activeProject.title}`}
             >
               <div className={styles.visualGrid} />
-              <span className={styles.visualIcon} aria-hidden="true">
-                {getIcon(activeProject.tags)}
-              </span>
+              {activeProject.media?.hero
+                ? <img src={activeProject.media.hero} alt={activeProject.title} className={styles.visualImg} loading="lazy" />
+                : <span className={styles.visualIcon} aria-hidden="true">{getIcon(activeProject.tags)}</span>
+              }
+              <div className={styles.visualImgOverlay} />
               <span className={styles.visualTag}>{activeProject.tags[0]}</span>
               <span className={styles.visualOpen}>Open →</span>
             </button>

@@ -1,24 +1,30 @@
 :root {
   /* Layout */
-  --container: 1100px;
+  --container: 1200px;
 
   /* Colors */
   --bg: #0b0c10;
-  --surface: rgba(255, 255, 255, 0.06);
-  --surface-2: rgba(255, 255, 255, 0.1);
-  --border: rgba(255, 255, 255, 0.12);
-
+  --accent: #5c9aff;
+  --accent-soft: #a78bff;
   --text: rgba(255, 255, 255, 0.92);
-  --muted: rgba(255, 255, 255, 0.68);
+  --muted: rgba(255, 255, 255, 0.55);
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-2: rgba(255, 255, 255, 0.08);
+  --surface-hover: rgba(92, 154, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.07);
+  --border-accent: rgba(92, 154, 255, 0.25);
+  --green: #22d3a0;
+  --green-soft: #6ee7b7;
 
-  /* Accent */
-  --accent: #7c5cff;
+  /* Typography */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
 
   /* Effects */
   --radius: 16px;
-  --radius-sm: 12px;
-
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --radius-sm: 10px;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(92, 154, 255, 0.1);
+  --glow: 0 0 30px rgba(92, 154, 255, 0.25);
 
   /* Spacing */
   --s-1: 8px;
